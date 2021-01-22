@@ -1,4 +1,5 @@
 import { useReducer, useState } from 'react';
+import UseMemoHook from './ReactUseMemo';
 import Todos from './todoUsingReactReduser';
 
 export const ACTIONS = {
@@ -39,16 +40,21 @@ const App = () => {
   console.log(todos);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Add todo"
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
-      </form>
-      {name}
-      <Todos todos={todos} dispatch={dispatch} />
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Add todo"
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+        </form>
+        {name}
+        <Todos todos={todos} dispatch={dispatch} />
+      </div>
+      <div>
+        <UseMemoHook />
+      </div>
     </div>
   );
 };

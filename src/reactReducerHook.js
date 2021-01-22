@@ -1,5 +1,6 @@
 import { useReducer, useState } from 'react';
 import UseMemoHook from './ReactUseMemo';
+import UseRefHook from './ReactUseRef';
 import Todos from './todoUsingReactReduser';
 
 export const ACTIONS = {
@@ -54,6 +55,9 @@ const App = () => {
       </div>
       <div>
         <UseMemoHook />
+      </div>
+      <div>
+        <UseRefHook />
       </div>
     </div>
   );
